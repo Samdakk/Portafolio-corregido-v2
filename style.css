@@ -17,9 +17,9 @@ body {
 main {
     display: flex;
     height: 100vh;
-    width: 100vw; /* Ensure it takes full viewport width */
+    width: 100vw;
     font-family: Poppins;
-    position: absolute; /* Remove any default centering */
+    position: absolute;
     top: 0;
     left: 0;
 }
@@ -64,7 +64,7 @@ aside li:hover {
 .mySwiper {
     flex: 1;
     height: 100%;
-    width: calc(100vw - 200px); /* Full width minus sidebar */
+    width: calc(100vw - 200px);
     overflow: hidden;
 }
 
@@ -77,35 +77,39 @@ aside li:hover {
     overflow-y: auto;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 /* Dashboard */
 .dashboard {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 40px;
     color: #FFFFFF;
     background-color: #343A40;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .dashboard h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #80ED99;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .dashboard-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .dashboard-item {
-    flex: 1 1 calc(33% - 20px);
+    flex: 1 1 calc(33% - 30px);
     background-color: #212529;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    min-height: 200px;
 }
 
 /* Home Slide */
@@ -204,7 +208,7 @@ aside li:hover {
 }
 
 .buttongroup button, .primary {
-    padding: 12px 25px;
+    padding: 15px 35px;
     border: none;
     outline: none;
     font-size: 1.2rem;
@@ -238,12 +242,13 @@ aside li:hover {
 }
 
 /* About Us */
-about-us {
+.about-us {
     width: 100%;
     height: 100%;
     padding: 5% 10%;
     color: #FFFFFF;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .heading {
@@ -264,16 +269,19 @@ about-us {
 .about-me-division {
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .about-me-table {
-    width: 60%;
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .about-me-table li {
-    padding: 20px;
+    padding: 15px;
     position: relative;
 }
 
@@ -293,20 +301,14 @@ about-us {
     margin-right: 5px;
 }
 
-.about-me-table .buttongroup {
-    grid-column: 1/span 2;
-    justify-content: center;
-    padding: 50px;
-    flex: 1;
-}
-
 .skill-bar {
-    width: calc(40% - 20px);
+    width: 45%;
+    min-width: 300px;
 }
 
 .skill-bar li {
     width: 100%;
-    padding: 10px;
+    padding: 15px 0;
 }
 
 .skill-bar p {
@@ -320,6 +322,7 @@ about-us {
     height: 15px;
     background-color: #272c30;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .active-bar {
@@ -353,42 +356,46 @@ about-us {
     padding: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
     transform-style: preserve-3d;
     position: relative;
     height: 300px;
     cursor: pointer;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-.service:hover {
-    transform: translateY(-15px) rotateX(10deg) rotateY(10deg);
-    box-shadow: 0 15px 30px rgba(128, 237, 153, 0.3);
+.service.expanded {
+    transform: rotateY(180deg); /* Flip 180 degrees on Y-axis for 3D effect */
+    box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
 }
 
 .service-icon {
     margin-bottom: 20px;
+    transition: opacity 0.3s ease;
 }
 
 .service-icon i {
     font-size: 4rem;
     color: #80ED99;
-    transition: transform 0.3s ease;
 }
 
-.service:hover .service-icon i {
-    transform: scale(1.1) translateZ(20px);
+.service.expanded .service-icon,
+.service.expanded h2,
+.service.expanded .service-short {
+    opacity: 0; /* Hide front content when expanded */
 }
 
 .service h2 {
     color: #80ED99;
     margin-bottom: 15px;
     font-size: 1.5rem;
+    transition: opacity 0.3s ease;
 }
 
 .service-short {
     margin-bottom: 15px;
     font-size: 1rem;
     color: #ccc;
+    transition: opacity 0.3s ease;
 }
 
 .service-details-content {
@@ -400,23 +407,19 @@ about-us {
     background-color: #212529;
     padding: 20px;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: rotateX(-90deg);
-    transform-origin: top;
+    transform: rotateY(180deg); /* Start flipped to match back side */
+    transform-origin: center;
     z-index: 2;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden; /* Hide backface when not flipped */
 }
 
-.service.active .service-details-content {
-    opacity: 1;
-    transform: rotateX(0deg);
-}
-
-.service:not(.active) .service-details-content {
-    transform: rotateX(-90deg);
+.service.expanded .service-details-content {
+    opacity: 1; /* Show details when expanded */
 }
 
 .service-details-content h3 {
@@ -769,25 +772,54 @@ footer {
 @media (max-width: 768px) {
     .services-container, .projects-container, .certificates-container {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .contact-info {
         flex-direction: column;
+        gap: 30px;
     }
     
     .HomeContent {
-        padding: 50px;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .HomeContent h1 {
+        font-size: 2.5em;
+    }
+    
+    .HomeContent h2 {
+        font-size: 1.8em;
+    }
+    
+    .HomeContent .heroline {
+        font-size: 1.2rem;
+        padding-right: 0;
+    }
+    
+    .SideImg {
+        display: none;
     }
     
     .about-me-table, .skill-bar {
         width: 100%;
+        padding: 0 20px;
     }
     
     .about-me-division {
         flex-direction: column;
+        gap: 30px;
     }
     
     .dashboard-item {
         flex: 1 1 100%;
+        padding: 20px;
+    }
+    
+    .buttongroup {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 }

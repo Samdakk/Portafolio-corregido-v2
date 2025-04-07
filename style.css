@@ -114,17 +114,18 @@ aside li:hover {
     min-height: 200px;
 }
 
-/* Home Slide */
+/* Home Slide (Reverted to Original) */
 .home-slide {
     display: flex;
     color: #FFFFFF;
     background-color: #343A40;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
 }
 
 .HomeContent {
-    margin: auto 0;
     flex: 1;
-    height: auto;
     padding: 5% 10%;
     user-select: none;
 }
@@ -141,18 +142,18 @@ aside li:hover {
     border-radius: 10px;
 }
 
-.SideImg .Top-Right-Corner,
-.Bottom-Left-corner {
+.SideImg .top-right-corner,
+.bottom-left-corner {
     position: absolute;
 }
 
-.Bottom-Left-corner {
+.bottom-left-corner {
     left: -50px;
     bottom: -50px;
     rotate: -90deg;
 }
 
-.Top-Right-Corner {
+.top-right-corner {
     top: -50px;
     right: -50px;
     rotate: 90deg;
@@ -227,7 +228,7 @@ aside li:hover {
 .buttongroup button:hover, .primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(128, 237, 153, 0.5);
-    background: linear-gradient(135degFlood: #1d8637, #80ED99);
+    background: linear-gradient(135deg, #1d8637, #80ED99);
 }
 
 .slide-help {
@@ -255,19 +256,19 @@ aside li:hover {
 
 .heading {
     padding: 20px 10px;
-    font-size: 2.2rem; /* Reduced from 2.5rem */
+    font-size: 2.2rem;
     color: #80ED99;
 }
 
 .about-us h3 {
     padding: 10px;
-    font-size: 1.3rem; /* Reduced from default */
+    font-size: 1.3rem;
 }
 
 .aboutme-details {
     padding: 20px;
     font-weight: 300;
-    font-size: 0.9rem; /* Reduced for less cramped look */
+    font-size: 0.9rem;
 }
 
 .about-me-division {
@@ -287,7 +288,7 @@ aside li:hover {
 .about-me-table li {
     padding: 15px;
     position: relative;
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
 }
 
 .about-me-table li::after { 
@@ -311,7 +312,7 @@ aside li:hover {
     min-width: 300px;
 }
 
-.skill-bar li junction {
+.skill-bar li {
     width: 100%;
     padding: 15px 0;
 }
@@ -320,7 +321,7 @@ aside li:hover {
     color: #80ED99;
     font-weight: bold;
     margin: 10px;
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
 }
 
 .skill-bar .bar {
@@ -355,9 +356,9 @@ aside li:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 20px; /* Reduced from 30px to avoid overlap */
+    margin-top: 20px;
     perspective: 1000px;
-    max-width: 1200px; /* Center and limit width */
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -375,8 +376,9 @@ aside li:hover {
 }
 
 .service.expanded {
-    transform: rotateY(180deg);
+    transform: scale(1.5) rotateX(10deg) rotateY(10deg);
     box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
+    z-index: 10;
 }
 
 .service-icon {
@@ -425,18 +427,20 @@ aside li:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.6s ease;
     backface-visibility: hidden;
 }
 
 .service.expanded .service-details-content {
     opacity: 1;
+    transform: rotateY(0deg); /* Reset rotation when expanded */
+    font-size: 1.2rem; /* Larger text for readability */
 }
 
 .service-details-content h3 {
     color: #80ED99;
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Slightly larger for expanded state */
 }
 
 .service-details-content ul {
@@ -572,7 +576,7 @@ aside li:hover {
     object-fit: cover;
 }
 
-/* scratches Contact Me */
+/* Contact Me */
 .ContactMe {
     display: flex;
     flex-direction: column;

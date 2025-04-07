@@ -774,7 +774,7 @@ footer {
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-bottom: 20px; /* Reset margin for mobile */
+        margin-bottom: 40px; /* Reset margin for mobile */
     }
     
     .hire-btn, .contact-btn {

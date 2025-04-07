@@ -70,14 +70,16 @@ aside li:hover {
 
 .swiper-slide {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     color: #FFFFFF;
     background-color: #343A40;
     overflow-y: auto;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* Dashboard */
@@ -225,7 +227,7 @@ aside li:hover {
 .buttongroup button:hover, .primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(128, 237, 153, 0.5);
-    background: linear-gradient(135deg, #1d8637, #80ED99);
+    background: linear-gradient(135degFlood: #1d8637, #80ED99);
 }
 
 .slide-help {
@@ -253,17 +255,19 @@ aside li:hover {
 
 .heading {
     padding: 20px 10px;
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Reduced from 2.5rem */
     color: #80ED99;
 }
 
 .about-us h3 {
     padding: 10px;
+    font-size: 1.3rem; /* Reduced from default */
 }
 
 .aboutme-details {
     padding: 20px;
     font-weight: 300;
+    font-size: 0.9rem; /* Reduced for less cramped look */
 }
 
 .about-me-division {
@@ -283,6 +287,7 @@ aside li:hover {
 .about-me-table li {
     padding: 15px;
     position: relative;
+    font-size: 0.9rem; /* Reduced font size */
 }
 
 .about-me-table li::after { 
@@ -306,7 +311,7 @@ aside li:hover {
     min-width: 300px;
 }
 
-.skill-bar li {
+.skill-bar li junction {
     width: 100%;
     padding: 15px 0;
 }
@@ -315,6 +320,7 @@ aside li:hover {
     color: #80ED99;
     font-weight: bold;
     margin: 10px;
+    font-size: 0.9rem; /* Reduced font size */
 }
 
 .skill-bar .bar {
@@ -340,14 +346,19 @@ aside li:hover {
     overflow-y: auto;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .services-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 20px; /* Reduced from 30px to avoid overlap */
     perspective: 1000px;
+    max-width: 1200px; /* Center and limit width */
+    width: 100%;
 }
 
 .service {
@@ -364,7 +375,7 @@ aside li:hover {
 }
 
 .service.expanded {
-    transform: rotateY(180deg); /* Flip 180 degrees on Y-axis for 3D effect */
+    transform: rotateY(180deg);
     box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
 }
 
@@ -381,7 +392,7 @@ aside li:hover {
 .service.expanded .service-icon,
 .service.expanded h2,
 .service.expanded .service-short {
-    opacity: 0; /* Hide front content when expanded */
+    opacity: 0;
 }
 
 .service h2 {
@@ -407,7 +418,7 @@ aside li:hover {
     background-color: #212529;
     padding: 20px;
     opacity: 0;
-    transform: rotateY(180deg); /* Start flipped to match back side */
+    transform: rotateY(180deg);
     transform-origin: center;
     z-index: 2;
     overflow-y: auto;
@@ -415,11 +426,11 @@ aside li:hover {
     flex-direction: column;
     justify-content: flex-start;
     transition: opacity 0.3s ease;
-    backface-visibility: hidden; /* Hide backface when not flipped */
+    backface-visibility: hidden;
 }
 
 .service.expanded .service-details-content {
-    opacity: 1; /* Show details when expanded */
+    opacity: 1;
 }
 
 .service-details-content h3 {
@@ -521,93 +532,47 @@ aside li:hover {
 }
 
 /* Certificates */
-.certificates {
+.certificates-slide {
     display: flex;
     flex-direction: column;
     padding: 50px;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    align-items: center;
 }
 
 .certificates-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
+    max-width: 1200px;
 }
 
 .certificate {
-    background-color: #212529;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 300px;
-    display: flex;
-    flex-direction: column;
-}
-
-.certificate:hover {
-    transform: translateY(-10px);
-}
-
-.certificate-placeholder {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #aaa;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 20px;
 }
 
-.certificate-placeholder:hover {
-    background-color: #2c3036;
-}
-
-.certificate-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #80ED99;
-}
-
-.certificate-placeholder h3 {
-    color: #80ED99;
-    margin-bottom: 10px;
-}
-
-.certificate-placeholder p {
-    text-align: center;
-    color: #ccc;
+.certificate.expanded {
+    transform: scale(1.5);
+    box-shadow: 0 10px 20px rgba(128, 237, 153, 0.5);
+    z-index: 10;
 }
 
 .certificate img {
     width: 100%;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
 }
 
-.certificate-info {
-    padding: 15px;
-    background-color: #212529;
-}
-
-.certificate-info h3 {
-    color: #80ED99;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-}
-
-.certificate-info p {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-/* Contact Me */
+/* scratches Contact Me */
 .ContactMe {
     display: flex;
     flex-direction: column;

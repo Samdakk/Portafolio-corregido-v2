@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Inicializa botones de contacto
-    const contactButtons = document.querySelectorAll('button:nth-child(2)');
+    const contactButtons = document.querySelectorAll('.contact-btn');
     contactButtons.forEach(button => {
         button.addEventListener('click', function() {
             Navigate(5);
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Inicializa botones de contratación
-    const hireButtons = document.querySelectorAll('button:nth-child(1)');
+    const hireButtons = document.querySelectorAll('.hire-btn');
     hireButtons.forEach(button => {
         button.addEventListener('click', function() {
             const emailLink = "mailto:Vazquezlucas721@gmail.com?subject=Job Opportunity";
@@ -66,7 +66,10 @@ function initializeServices() {
                 service.classList.remove('expanded');
                 return;
             }
-            // Toggle expanded state with 3D effect
+            // Close all other services before expanding the clicked one
+            services.forEach(s => {
+                if (s !== service) s.classList.remove('expanded');
+            });
             service.classList.toggle('expanded');
         });
     });

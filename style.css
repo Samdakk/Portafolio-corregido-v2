@@ -82,59 +82,29 @@ aside li:hover {
     scroll-behavior: smooth;
 }
 
-/* Dashboard */
-.dashboard {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    color: #FFFFFF;
-    background-color: #343A40;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.dashboard h1 {
-    font-size: 3rem;
-    color: #80ED99;
-    margin-bottom: 30px;
-}
-
-.dashboard-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.dashboard-item {
-    flex: 1 1 calc(33% - 30px);
-    background-color: #212529;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    min-height: 200px;
-}
-
-/* Home Slide (Reverted to Original) */
+/* Home Slide */
 .home-slide {
     display: flex;
+    justify-content: center;
+    align-items: center;
     color: #FFFFFF;
     background-color: #343A40;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 5%;
+    width: 100%;
 }
 
 .HomeContent {
     flex: 1;
-    padding: 5% 10%;
-    user-select: none;
+    padding: 0 5% 0 10%;
+    text-align: left;
+    max-width: 50%;
 }
 
 .SideImg {
     width: 30%;
-    margin: auto 10px;
     margin-right: 100px;
     position: relative;
+    max-width: 300px;
 }
 
 .SideImg img {
@@ -143,17 +113,17 @@ aside li:hover {
 }
 
 .SideImg .top-right-corner,
-.bottom-left-corner {
+.SideImg .bottom-left-corner {
     position: absolute;
 }
 
-.bottom-left-corner {
+.SideImg .bottom-left-corner {
     left: -50px;
     bottom: -50px;
     rotate: -90deg;
 }
 
-.top-right-corner {
+.SideImg .top-right-corner {
     top: -50px;
     right: -50px;
     rotate: 90deg;
@@ -186,7 +156,7 @@ aside li:hover {
 .HomeContent h2 {
     font-size: 2.3em;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .HomeContent h1 .stylized-name {
@@ -198,49 +168,56 @@ aside li:hover {
     color: #85f69f;
 }
 
-.HomeContent .heroline {
-    font-size: 1.5rem;
-    font-weight: 300;
-    padding-right: 50px;
-}
-
 .buttongroup {
     display: flex;
-    padding: 10px 0px;
-    margin-top: 10px;
+    gap: 15px;
+    padding: 10px 0;
 }
 
-.buttongroup button, .primary {
+.hire-btn, .contact-btn {
     padding: 15px 35px;
     border: none;
     outline: none;
     font-size: 1.2rem;
     font-weight: 500;
-    margin: 5px;
     cursor: pointer;
-    background: linear-gradient(135deg, #80ED99, #1d8637);
-    color: #FFFFFF;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(128, 237, 153, 0.3);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.buttongroup button:hover, .primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(128, 237, 153, 0.5);
+.hire-btn {
+    background: linear-gradient(135deg, #80ED99, #1d8637);
+    color: #FFFFFF;
+    box-shadow: 0 5px 15px rgba(128, 237, 153, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.hire-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(128, 237, 153, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
     background: linear-gradient(135deg, #1d8637, #80ED99);
+}
+
+.contact-btn {
+    background: linear-gradient(135deg, #FFFFFF, #D3D3D3);
+    color: #1d8637;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4), inset 0 0 10px rgba(128, 237, 153, 0.2);
+}
+
+.contact-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.6), inset 0 0 15px rgba(128, 237, 153, 0.3);
+    background: linear-gradient(135deg, #D3D3D3, #FFFFFF);
 }
 
 .slide-help {
     position: absolute;
-    width: 100px;
     bottom: 10px;
     text-align: center;
     font-weight: 400;
     z-index: 100;
-    left: 0%;
     width: 100%;
-    box-sizing: border-box;
     font-size: 1.2rem;
 }
 
@@ -376,7 +353,7 @@ aside li:hover {
 }
 
 .service.expanded {
-    transform: scale(1.5) rotateX(10deg) rotateY(10deg);
+    transform: scale(1.5);
     box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
     z-index: 10;
 }
@@ -420,7 +397,7 @@ aside li:hover {
     background-color: #212529;
     padding: 20px;
     opacity: 0;
-    transform: rotateY(180deg);
+    transform: scale(0.8);
     transform-origin: center;
     z-index: 2;
     overflow-y: auto;
@@ -428,19 +405,18 @@ aside li:hover {
     flex-direction: column;
     justify-content: flex-start;
     transition: opacity 0.3s ease, transform 0.6s ease;
-    backface-visibility: hidden;
 }
 
 .service.expanded .service-details-content {
     opacity: 1;
-    transform: rotateY(0deg); /* Reset rotation when expanded */
-    font-size: 1.2rem; /* Larger text for readability */
+    transform: scale(1);
+    font-size: 1.2rem;
 }
 
 .service-details-content h3 {
     color: #80ED99;
     margin-bottom: 15px;
-    font-size: 1.5rem; /* Slightly larger for expanded state */
+    font-size: 1.5rem;
 }
 
 .service-details-content ul {
@@ -752,6 +728,7 @@ footer {
     .HomeContent {
         padding: 60px 20px;
         text-align: center;
+        max-width: 100%;
     }
     
     .HomeContent h1 {
@@ -760,11 +737,6 @@ footer {
     
     .HomeContent h2 {
         font-size: 1.8em;
-    }
-    
-    .HomeContent .heroline {
-        font-size: 1.2rem;
-        padding-right: 0;
     }
     
     .SideImg {
@@ -779,11 +751,6 @@ footer {
     .about-me-division {
         flex-direction: column;
         gap: 30px;
-    }
-    
-    .dashboard-item {
-        flex: 1 1 100%;
-        padding: 20px;
     }
     
     .buttongroup {

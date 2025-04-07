@@ -11,14 +11,17 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita barras de desplazamiento no deseadas */
+    overflow: hidden;
 }
 
 main {
     display: flex;
-    height: 100vh; /* Asegura que ocupe todo el viewport */
-    width: 100%;
+    height: 100vh;
+    width: 100vw; /* Ensure it takes full viewport width */
     font-family: Poppins;
+    position: absolute; /* Remove any default centering */
+    top: 0;
+    left: 0;
 }
 
 aside {
@@ -60,23 +63,23 @@ aside li:hover {
 
 .mySwiper {
     flex: 1;
-    height: 100%; /* Hereda del padre (main) */
-    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100%;
+    width: calc(100vw - 200px); /* Full width minus sidebar */
     overflow: hidden;
 }
 
 .swiper-slide {
     display: flex;
-    justify-content: flex-start; /* Comienza desde la izquierda */
-    align-items: flex-start; /* Comienza desde arriba */
+    justify-content: flex-start;
+    align-items: flex-start;
     color: #FFFFFF;
     background-color: #343A40;
     overflow-y: auto;
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    height: 100%; /* Asegura que ocupe toda la altura */
+    width: 100%;
+    height: 100%;
 }
 
-/* Estilos para la nueva pestaña "Dashboard" */
+/* Dashboard */
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -105,14 +108,7 @@ aside li:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-    .dashboard-item {
-        flex: 1 1 100%;
-    }
-}
-
-/* Otros estilos existentes */
+/* Home Slide */
 .home-slide {
     display: flex;
     color: #FFFFFF;
@@ -123,7 +119,7 @@ aside li:hover {
     margin: auto 0;
     flex: 1;
     height: auto;
-    padding: 5% 10%; /* Ajustado para ser más adaptable */
+    padding: 5% 10%;
     user-select: none;
 }
 
@@ -208,16 +204,24 @@ aside li:hover {
 }
 
 .buttongroup button, .primary {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     outline: none;
     font-size: 1.2rem;
     font-weight: 500;
     margin: 5px;
     cursor: pointer;
-    background-color: #1d8637;
+    background: linear-gradient(135deg, #80ED99, #1d8637);
     color: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 237, 153, 0.3);
+}
+
+.buttongroup button:hover, .primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(128, 237, 153, 0.5);
+    background: linear-gradient(135deg, #1d8637, #80ED99);
 }
 
 .slide-help {
@@ -231,12 +235,13 @@ aside li:hover {
     width: 100%;
     box-sizing: border-box;
     font-size: 1.2rem;
- /
+}
 
+/* About Us */
 about-us {
     width: 100%;
     height: 100%;
-    padding: 5% 10%; /* Ajustado para ser más adaptable */
+    padding: 5% 10%;
     color: #FFFFFF;
     overflow-y: auto;
 }
@@ -324,7 +329,7 @@ about-us {
     border-radius: 20px;
 }
 
-/* SERVICIOS - MEJORADOS */
+/* Services */
 .Services {
     color: #FFFFFF;
     padding: 50px;
@@ -337,26 +342,27 @@ about-us {
 .services-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
+    gap: 30px;
+    margin-top: 30px;
+    perspective: 1000px;
 }
 
 .service {
     background-color: #212529;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
     position: relative;
-    overflow: hidden;
-    height: 250px;
+    height: 300px;
+    cursor: pointer;
 }
 
 .service:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-15px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 15px 30px rgba(128, 237, 153, 0.3);
 }
 
 .service-icon {
@@ -364,9 +370,13 @@ about-us {
 }
 
 .service-icon i {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #80ED99;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.service:hover .service-icon i {
+    transform: scale(1.1) translateZ(20px);
 }
 
 .service h2 {
@@ -390,11 +400,23 @@ about-us {
     background-color: #212529;
     padding: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    z-index: 2;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.service.active .service-details-content {
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+.service:not(.active) .service-details-content {
+    transform: rotateX(-90deg);
 }
 
 .service-details-content h3 {
@@ -412,11 +434,6 @@ about-us {
     margin-bottom: 8px;
 }
 
-.service.active .service-details-content {
-    opacity: 1;
-    z-index: 2;
-}
-
 .service-details-content .close-details {
     position: absolute;
     top: 10px;
@@ -426,7 +443,7 @@ about-us {
     cursor: pointer;
 }
 
-/* GALLERY */
+/* Gallery */
 .gallery { 
     display: flex;
     flex-direction: column;
@@ -446,10 +463,17 @@ about-us {
 
 .project {
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.project:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 10px 25px rgba(128, 237, 153, 0.3);
 }
 
 .project img {
@@ -469,13 +493,14 @@ about-us {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    transform: translateZ(20px);
 }
 
 .project:hover .project-overlay {
@@ -492,7 +517,7 @@ about-us {
     font-size: 0.9rem;
 }
 
-/* CERTIFICATES SECTION */
+/* Certificates */
 .certificates {
     display: flex;
     flex-direction: column;
@@ -579,7 +604,7 @@ about-us {
     color: #ccc;
 }
 
-/* CONTACT ME SECTION - IMPROVED */
+/* Contact Me */
 .ContactMe {
     display: flex;
     flex-direction: column;
@@ -636,21 +661,23 @@ about-us {
 
 form {
     flex: 1;
-    background-color: #212529;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #212529, #343A40);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(128, 237, 153, 0.2);
 }
 
 form h2 {
+    margin-bottom: 30px;
+    color: #80ED99;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #80ED99;
+    font-size: 2rem;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    color: #80ED99;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #444;
 }
 
 .sociallinks {
@@ -661,49 +688,55 @@ form h2 {
 
 .sociallinks i {
     color: #80ED99;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .sociallinks i:hover {
-    transform: scale(1.2);
+    transform: scale(1.3) rotate(10deg);
+    color: #1d8637;
 }
 
 form input, form textarea {
-    background-color: #343a40;
-    border: 1px solid #444;
+    background: #2c3036;
+    border: 1px solid #80ED99;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
 form input:focus, form textarea:focus {
-    border-color: #80ED99;
-    outline: none;
+    border-color: #1d8637;
+    box-shadow: 0 0 10px rgba(128, 237, 153, 0.3);
+    background: #343a40;
 }
 
 form textarea {
-    min-height: 180px;
+    min-height: 200px;
     resize: vertical;
 }
 
 form button {
-    background-color: #1d8637;
+    background: linear-gradient(135deg, #80ED99, #1d8637);
     color: white;
-    padding: 12px 25px;
+    padding: 15px 35px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 237, 153, 0.3);
     align-self: flex-start;
 }
 
 form button:hover {
-    background-color: #24a644;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(128, 237, 153, 0.5);
+    background: linear-gradient(135deg, #1d8637, #80ED99);
 }
 
 footer {
@@ -713,7 +746,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
+/* Responsive Adjustments */
 @media (max-width: 1200px) {
     .services-container, .projects-container, .certificates-container {
         grid-template-columns: repeat(2, 1fr);
@@ -752,5 +785,9 @@ footer {
     
     .about-me-division {
         flex-direction: column;
+    }
+    
+    .dashboard-item {
+        flex: 1 1 100%;
     }
 }

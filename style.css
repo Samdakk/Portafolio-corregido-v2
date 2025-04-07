@@ -179,7 +179,7 @@ aside li p {
     display: flex;
     gap: 20px;
     padding: 10px 0;
-    margin-top: 20px; /* Ajustado para una separación simétrica */
+    margin-top: 40px; /* Ajustado para una separación simétrica */
     margin-bottom: 20px;
 }
 
@@ -775,7 +775,7 @@ footer {
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-top: 40px; /* Ajustado para simetría con la separación superior */
+        margin-top: 50px; /* Ajustado para simetría con la separación superior */
         margin-bottom: 20px;
     }
     

@@ -101,7 +101,7 @@ aside li p {
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 50px;
+    gap: 0px; /* Reducido para ajustar la separación superior */
 }
 
 .HomeContent {
@@ -126,7 +126,7 @@ aside li p {
 
 .SideImg .bottom-left-corner {
     left: -50px;
-    bottom: -60px;
+    bottom: -50px;
     rotate: -90deg;
 }
 
@@ -163,7 +163,7 @@ aside li p {
 .HomeContent h2 {
     font-size: 2.3em;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Ajustado para una separación de 40px */
 }
 
 .HomeContent h1 .stylized-name {
@@ -179,8 +179,8 @@ aside li p {
     display: flex;
     gap: 20px;
     padding: 10px 0;
-    margin-top: 50px; /* Ajustado para una separación simétrica */
-    margin-bottom: 40px;
+    margin-top: 40px; /* Ajustado para una separación de 40px en desktop */
+    margin-bottom: 20px;
 }
 
 .hire-btn, .contact-btn {
@@ -753,7 +753,7 @@ footer {
     
     .home-slide {
         padding: 20px;
-        gap: 30px;
+        gap: 0px; /* Reducido para ajustar la separación superior */
     }
     
     .HomeContent {
@@ -766,6 +766,7 @@ footer {
     
     .HomeContent h2 {
         font-size: 1.5em;
+        margin-bottom: 10px; /* Ajustado para una separación de 40px */
     }
     
     .SideImg {
@@ -775,7 +776,7 @@ footer {
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-top: 50px; /* Ajustado para simetría con la separación superior */
+        margin-top: 60px; /* Ajustado para una separación de 40px en móvil */
         margin-bottom: 20px;
     }
     
@@ -811,4 +812,4 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
-        }
+    }

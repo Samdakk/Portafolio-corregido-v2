@@ -74,17 +74,26 @@ function initializeServices() {
             detailsDiv.innerHTML += detailsContent.innerHTML;
             service.appendChild(detailsDiv);
             
+            // Toggle 3D expansion on click
             service.addEventListener('click', function(event) {
                 if (event.target.classList.contains('close-details')) {
-                    service.classList.remove('active');
+                    service.classList.remove('expanded');
                     return;
                 }
-                service.classList.add('active');
+                // Toggle expanded state
+                if (service.classList.contains('expanded')) {
+                    service.classList.remove('expanded');
+                } else {
+                    // Close other open services
+                    services.forEach(s => s.classList.remove('expanded'));
+                    service.classList.add('expanded');
+                }
             });
-            
+
+            // Close when clicking outside (optional, but improves UX)
             document.addEventListener('click', function(event) {
-                if (!service.contains(event.target)) {
-                    service.classList.remove('active');
+                if (!service.contains(event.target) && service.classList.contains('expanded')) {
+                    service.classList.remove('expanded');
                 }
             });
         }

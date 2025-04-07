@@ -100,7 +100,7 @@ aside li p {
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 40px; /* Added gap between elements */
+    gap: 10px; /* Added gap between elements */
 }
 
 .HomeContent {

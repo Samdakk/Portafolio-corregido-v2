@@ -100,7 +100,7 @@ aside li p {
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 30px; /* Added gap between elements */
+    gap: 40px; /* Added gap between elements */
 }
 
 .HomeContent {
@@ -178,8 +178,8 @@ aside li p {
     display: flex;
     gap: 20px; /* Increased gap between buttons */
     padding: 10px 0;
-    margin-top: 50px;
-    margin-bottom: 10px; /* Moved buttons lower */
+    margin-top: 100px;
+    margin-bottom: 20px; /* Moved buttons lower */
 }
 
 .hire-btn, .contact-btn {

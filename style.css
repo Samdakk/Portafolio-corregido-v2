@@ -94,13 +94,13 @@ aside li p {
 .home-slide {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: #FFFFFF;
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 10px; /* Added gap between elements */
+    gap: 40px; /* Added gap between elements */
 }
 
 .HomeContent {

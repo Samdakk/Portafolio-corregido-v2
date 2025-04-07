@@ -178,7 +178,8 @@ aside li p {
     display: flex;
     gap: 20px; /* Increased gap between buttons */
     padding: 10px 0;
-    margin-bottom: -120px; /* Moved buttons lower */
+    margin-top: 20px;
+    margin-bottom: 0px; /* Moved buttons lower */
 }
 
 .hire-btn, .contact-btn {

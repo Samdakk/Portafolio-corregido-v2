@@ -9,12 +9,14 @@
 
 body {
     height: 100vh;
-    margin: 0; /* Asegúrate de que no haya márgenes */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita barras de desplazamiento no deseadas */
 }
 
 main {
     display: flex;
-    height: 100%;
+    height: 100vh; /* Asegura que ocupe todo el viewport */
     width: 100%;
     font-family: Poppins;
 }
@@ -58,17 +60,20 @@ aside li:hover {
 
 .mySwiper {
     flex: 1;
-    height: 100%;
-    overflow: hidden; /* Asegúrate de que no haya desbordamiento */
+    height: 100%; /* Hereda del padre (main) */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    overflow: hidden;
 }
 
 .swiper-slide {
-    display: flex; /* Asegúrate de que los slides se distribuyan correctamente */
-    justify-content: center; /* Centra el contenido */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: flex-start; /* Comienza desde la izquierda */
+    align-items: flex-start; /* Comienza desde arriba */
     color: #FFFFFF;
     background-color: #343A40;
-    overflow-y: auto; /* Permitir scroll vertical */
+    overflow-y: auto;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    height: 100%; /* Asegura que ocupe toda la altura */
 }
 
 /* Estilos para la nueva pestaña "Dashboard" */
@@ -77,7 +82,7 @@ aside li:hover {
     flex-direction: column;
     padding: 20px;
     color: #FFFFFF;
-    background-color: #343A40; /* Asegúrate de que el fondo sea consistente */
+    background-color: #343A40;
 }
 
 .dashboard h1 {
@@ -88,12 +93,12 @@ aside li:hover {
 
 .dashboard-content {
     display: flex;
-    flex-wrap: wrap; /* Permite que el contenido se ajuste */
-    gap: 20px; /* Espaciado entre elementos */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .dashboard-item {
-    flex: 1 1 calc(33% - 20px); /* Tres columnas con espacio */
+    flex: 1 1 calc(33% - 20px);
     background-color: #212529;
     padding: 20px;
     border-radius: 10px;
@@ -103,7 +108,7 @@ aside li:hover {
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     .dashboard-item {
-        flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+        flex: 1 1 100%;
     }
 }
 
@@ -115,10 +120,10 @@ aside li:hover {
 }
 
 .HomeContent {
-    margin: auto 0px;
+    margin: auto 0;
     flex: 1;
     height: auto;
-    padding: 100px;
+    padding: 5% 10%; /* Ajustado para ser más adaptable */
     user-select: none;
 }
 
@@ -226,12 +231,12 @@ aside li:hover {
     width: 100%;
     box-sizing: border-box;
     font-size: 1.2rem;
-}
+ /
 
-.about-us {
+about-us {
     width: 100%;
     height: 100%;
-    padding: 100px;
+    padding: 5% 10%; /* Ajustado para ser más adaptable */
     color: #FFFFFF;
     overflow-y: auto;
 }

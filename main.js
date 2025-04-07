@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactButtons = document.querySelectorAll('.contact-btn');
     contactButtons.forEach(button => {
         button.addEventListener('click', function() {
-            Navigate(5);
+            Navigate(5); // Navigate to Contact Me (slide 5)
         });
     });
 

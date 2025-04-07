@@ -66,20 +66,8 @@ function initializeServices() {
                 service.classList.remove('expanded');
                 return;
             }
-            // Toggle expanded state
-            if (service.classList.contains('expanded')) {
-                service.classList.remove('expanded');
-            } else {
-                services.forEach(s => s.classList.remove('expanded'));
-                service.classList.add('expanded');
-            }
-        });
-
-        // Close when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!service.contains(event.target) && service.classList.contains('expanded')) {
-                service.classList.remove('expanded');
-            }
+            // Toggle expanded state with 3D effect
+            service.classList.toggle('expanded');
         });
     });
 }

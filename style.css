@@ -44,8 +44,8 @@ aside {
 aside li {
     list-style-type: none;
     display: flex;
-    padding: 30px 20px; /* Increased padding for more spacing */
-    gap: 15px; /* Increased gap for better separation */
+    padding: 30px 20px;
+    gap: 15px;
     color: #FFFFFF;
     align-items: center;
     cursor: pointer;
@@ -58,11 +58,11 @@ aside li:hover {
 }
 
 aside li i {
-    font-size: 1.5rem; /* Increased icon size */
+    font-size: 1.5rem;
 }
 
 aside li p {
-    font-size: 1.2rem; /* Increased title font size */
+    font-size: 1.2rem;
 }
 
 .activelink {
@@ -88,6 +88,7 @@ aside li p {
     height: 100%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    position: relative; /* Aseguramos que position: absolute en .slide-help funcione */
 }
 
 /* Home Slide */
@@ -100,12 +101,12 @@ aside li p {
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 50px; /* Added gap between elements */
+    gap: 50px;
 }
 
 .HomeContent {
     text-align: center;
-    margin-top: -50px; /* Moved text higher */
+    margin-top: -50px;
 }
 
 .SideImg {
@@ -176,10 +177,10 @@ aside li p {
 
 .buttongroup {
     display: flex;
-    gap: 20px; /* Increased gap between buttons */
+    gap: 20px;
     padding: 10px 0;
-    margin-top: 10px;
-    margin-bottom: 100px; /* Moved buttons lower */
+    margin-top: 70px; /* Mueve los botones debajo de la línea verde */
+    margin-bottom: 20px; /* Espacio suficiente para que .slide-help sea visible */
 }
 
 .hire-btn, .contact-btn {
@@ -364,7 +365,7 @@ aside li p {
 }
 
 .service.expanded {
-    transform: scale(1.2); /* Reduced from 1.5 to 1.2 */
+    transform: scale(1.2);
     box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
     z-index: 10;
     height: auto;
@@ -423,13 +424,13 @@ aside li p {
 .service.expanded .service-details-content {
     opacity: 1;
     transform: scale(1);
-    font-size: 1.1rem; /* Slightly reduced for better fit */
+    font-size: 1.1rem;
 }
 
 .service-details-content h3 {
     color: #80ED99;
     margin-bottom: 15px;
-    font-size: 1.4rem; /* Slightly reduced for better fit */
+    font-size: 1.4rem;
 }
 
 .service-details-content ul {
@@ -729,7 +730,7 @@ footer {
 
 @media (max-width: 768px) {
     aside {
-        width: 100px; /* Reduced sidebar width */
+        width: 100px;
     }
     
     .mySwiper {
@@ -737,7 +738,7 @@ footer {
     }
     
     aside li {
-        padding: 20px 10px; /* Adjusted padding for mobile */
+        padding: 20px 10px;
         flex-direction: column;
         text-align: center;
     }
@@ -747,34 +748,35 @@ footer {
     }
     
     aside li p {
-        font-size: 0.9rem; /* Reduced font size for mobile */
+        font-size: 0.9rem;
     }
     
     .home-slide {
         padding: 20px;
-        gap: 20px; /* Reduced gap for mobile */
+        gap: 30px;
     }
     
     .HomeContent {
-        margin-top: -20px; /* Adjusted for mobile */
+        margin-top: -20px;
     }
     
     .HomeContent h1 {
-        font-size: 2em; /* Reduced font size */
+        font-size: 2em;
     }
     
     .HomeContent h2 {
-        font-size: 1.5em; /* Reduced font size */
+        font-size: 1.5em;
     }
     
     .SideImg {
-        width: 150px; /* Reduced image size */
+        width: 150px;
     }
     
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-bottom: 40px; /* Reset margin for mobile */
+        margin-top: 60px;
+        margin-bottom: 20px;
     }
     
     .hire-btn, .contact-btn {
@@ -792,7 +794,7 @@ footer {
     }
     
     .service.expanded {
-        transform: scale(1.1); /* Further reduced for mobile */
+        transform: scale(1.1);
     }
     
     .contact-info {

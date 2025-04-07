@@ -88,7 +88,7 @@ aside li p {
     height: 100%;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    position: relative; /* Aseguramos que position: absolute en .slide-help funcione */
+    position: relative;
 }
 
 /* Home Slide */
@@ -179,8 +179,8 @@ aside li p {
     display: flex;
     gap: 20px;
     padding: 10px 0;
-    margin-top: 70px; /* Mueve los botones debajo de la línea verde */
-    margin-bottom: 20px; /* Espacio suficiente para que .slide-help sea visible */
+    margin-top: 20px; /* Ajustado para una separación simétrica */
+    margin-bottom: 20px;
 }
 
 .hire-btn, .contact-btn {
@@ -775,7 +775,7 @@ footer {
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-top: 60px;
+        margin-top: 40px; /* Ajustado para simetría con la separación superior */
         margin-bottom: 20px;
     }
     
@@ -811,4 +811,4 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
-}
+        }

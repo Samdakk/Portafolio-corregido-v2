@@ -44,8 +44,8 @@ aside {
 aside li {
     list-style-type: none;
     display: flex;
-    padding: 20px;
-    gap: 10px;
+    padding: 30px 20px; /* Increased padding for more spacing */
+    gap: 15px; /* Increased gap for better separation */
     color: #FFFFFF;
     align-items: center;
     cursor: pointer;
@@ -55,6 +55,14 @@ aside li {
 
 aside li:hover {
     font-size: 1.3rem;
+}
+
+aside li i {
+    font-size: 1.5rem; /* Increased icon size */
+}
+
+aside li p {
+    font-size: 1.2rem; /* Increased title font size */
 }
 
 .activelink {
@@ -90,19 +98,19 @@ aside li:hover {
     align-items: center;
     color: #FFFFFF;
     background-color: #343A40;
-    padding: 20px;
+    padding: 40px;
     width: 100%;
+    gap: 40px; /* Added gap between elements */
 }
 
 .HomeContent {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: -50px; /* Moved text higher */
 }
 
 .SideImg {
     width: 200px;
     position: relative;
-    margin-bottom: 20px;
 }
 
 .SideImg img {
@@ -148,7 +156,7 @@ aside li:hover {
 .HomeContent h1 {
     font-size: 3em;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .HomeContent h2 {
@@ -168,8 +176,9 @@ aside li:hover {
 
 .buttongroup {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Increased gap between buttons */
     padding: 10px 0;
+    margin-bottom: -50px; /* Moved buttons lower */
 }
 
 .hire-btn, .contact-btn {
@@ -354,7 +363,7 @@ aside li:hover {
 }
 
 .service.expanded {
-    transform: scale(1.5);
+    transform: scale(1.2); /* Reduced from 1.5 to 1.2 */
     box-shadow: 0 15px 30px rgba(128, 237, 153, 0.5);
     z-index: 10;
     height: auto;
@@ -413,13 +422,13 @@ aside li:hover {
 .service.expanded .service-details-content {
     opacity: 1;
     transform: scale(1);
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Slightly reduced for better fit */
 }
 
 .service-details-content h3 {
     color: #80ED99;
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Slightly reduced for better fit */
 }
 
 .service-details-content ul {
@@ -718,41 +727,85 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .services-container, .projects-container, .certificates-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    aside {
+        width: 100px; /* Reduced sidebar width */
     }
     
-    .contact-info {
+    .mySwiper {
+        width: calc(100vw - 100px);
+    }
+    
+    aside li {
+        padding: 20px 10px; /* Adjusted padding for mobile */
         flex-direction: column;
-        gap: 30px;
+        text-align: center;
+    }
+    
+    aside li i {
+        font-size: 1.2rem;
+    }
+    
+    aside li p {
+        font-size: 0.9rem; /* Reduced font size for mobile */
+    }
+    
+    .home-slide {
+        padding: 20px;
+        gap: 20px; /* Reduced gap for mobile */
+    }
+    
+    .HomeContent {
+        margin-top: -20px; /* Adjusted for mobile */
     }
     
     .HomeContent h1 {
-        font-size: 2.5em;
+        font-size: 2em; /* Reduced font size */
     }
     
     .HomeContent h2 {
-        font-size: 1.8em;
+        font-size: 1.5em; /* Reduced font size */
     }
     
     .SideImg {
-        width: 150px;
-    }
-    
-    .about-me-table, .skill-bar {
-        width: 100%;
-        padding: 0 20px;
-    }
-    
-    .about-me-division {
-        flex-direction: column;
-        gap: 30px;
+        width: 150px; /* Reduced image size */
     }
     
     .buttongroup {
         flex-direction: column;
-        align-items: center;
         gap: 15px;
+        margin-bottom: 0; /* Reset margin for mobile */
+    }
+    
+    .hire-btn, .contact-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    
+    .services-container, .projects-container, .certificates-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service {
+        padding: 30px;
+    }
+    
+    .service.expanded {
+        transform: scale(1.1); /* Further reduced for mobile */
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .about-me-table, .skill-bar {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .about-me-division {
+        flex-direction: column;
+        gap: 20px;
     }
 }

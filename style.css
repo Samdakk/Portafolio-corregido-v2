@@ -101,7 +101,7 @@ aside li p {
     background-color: #343A40;
     padding: 40px;
     width: 100%;
-    gap: 0px; /* Reducido para ajustar la separación superior */
+    gap: 20px; /* Reducido para ajustar la separación superior */
 }
 
 .HomeContent {

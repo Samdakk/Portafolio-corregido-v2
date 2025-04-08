@@ -95,7 +95,7 @@ aside li p {
 .home-slide {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
     background-color: #343A40;

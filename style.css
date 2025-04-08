@@ -753,7 +753,7 @@ footer {
     
     .home-slide {
         padding: 20px;
-        gap: 0px; /* Reducido para ajustar la separación superior */
+        gap: 10px; /* Reducido para ajustar la separación superior */
     }
     
     .HomeContent {
@@ -776,8 +776,8 @@ footer {
     .buttongroup {
         flex-direction: column;
         gap: 15px;
-        margin-top: 60px; /* Ajustado para una separación de 40px en móvil */
-        margin-bottom: 20px;
+        margin-top: 80px; /* Ajustado para una separación de 40px en móvil */
+        margin-bottom: 40px;
     }
     
     .hire-btn, .contact-btn {

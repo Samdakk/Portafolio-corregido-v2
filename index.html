@@ -10,51 +10,52 @@
     <script defer src="main.js"></script>
     <title>Lucas Vazquez - Web Developer Portfolio</title>
 </head>
-<body>
-    <main>
-        <aside>
-            <ul class="Links">
-                <li onclick="Navigate(0)" class="activelink"><i class="fa-solid fa-house"></i><p>Home</p></li>
+<body class="body">
+    <main class="main">
+        <nav class="sidebar">
+            <ul class="links">
+                <li onclick="Navigate(0)" class="activelink">
+                    <i class="fa-solid fa-house"></i><p>Home</p></li>
                 <li onclick="Navigate(1)"><i class="fa-solid fa-user"></i><p>About Me</p></li>
                 <li onclick="Navigate(2)"><i class="fa-solid fa-list"></i><p>Services</p></li>
                 <li onclick="Navigate(3)"><i class="fa-solid fa-images"></i><p>Gallery</p></li>
                 <li onclick="Navigate(4)"><i class="fa-solid fa-certificate"></i><p>Certificates</p></li>
                 <li onclick="Navigate(5)"><i class="fa-solid fa-comments"></i><p>Contact Me</p></li>
             </ul>
-        </aside>
-        <div class="swiper mySwiper">
-            <div class="SlideContainer swiper-wrapper">
+        </nav>
+        <section class="swiper mySwiper">
+            <section class="SlideContainer swiper-wrapper">
                 <!-- Home Slide -->
-                <div class="swiper-slide home-slide">
-                    <div class="HomeContent">
-                        <h1>Hi! I'm <span class="stylized-name">Lucas</span>,</h1>
-                        <h2>A <span class="proffesions">Web Developer</span></h2>
-                    </div>
-                    <div class="SideImg">
+                <article class="swiper-slide home-slide">
+                    <section class="HomeContent">
+                        <h1 class="home-title">Hi! I'm <span class="stylized-name">Lucas</span>,</h1>
+                        <h2 class="home-subtitle">A <span class="proffesions">Web Developer</span></h2>
+                    </section>
+                    <figure class="SideImg">
                         <div class="top-right-corner">
                             <hr class="hr1">
                             <hr class="hr2">
                         </div>
-                        <img src="Src/Images/Profile-picture/C66A1861.jpg" alt="Profile picture">
+                        <img src="Src/Images/Profile-picture/C66A1861.jpg" alt="Profile picture of Lucas Vazquez">
                         <div class="bottom-left-corner">
                             <hr class="hr1">
                             <hr class="hr2">
                         </div>
-                    </div>
-                    <div class="buttonGroup">
+                    </figure>
+                    <section class="buttonGroup">
                         <button class="hire-btn">Hire Me</button>
                         <button class="contact-btn">Contact Me</button>
-                    </div>
+                    </section>
                     <p class="slide-help">Scroll for next slide <i class="fa-solid fa-chevron-right fa-shake"></i></p>
-                </div>
+                </article>
                 <!-- About Me Slide -->
-                <div class="swiper-slide">
-                    <div class="about-us">
-                        <h1 class="heading">About Me</h1>
+                <article class="swiper-slide">
+                    <section class="about-us">
+                        <h2 class="heading">About Me</h2>
                         <h3 class="sub-heading">I'm Lucas Vazquez, <span class="proffesions">A Web Developer</span></h3>
                         <p class="aboutme-details">I am a young Uruguayan who has been fascinated by programming all his life. I still have a lot to learn, but I have the ability and capacity to work efficiently and adapt to any situation. Most of my knowledge is self-taught, so I don't have many certificates, but I trust my experience can back up my lack of them. As a final note, I would like to clarify that I have always worked as a freelancer; I have never been fixed anywhere, and I would like to change that.</p>
-                        <div class="about-me-division">
-                            <div class="about-me-table">
+                        <section class="about-me-division">
+                            <section class="about-me-table">
                                 <ul>
                                     <li><span>Experience:</span> 3+ years</li>
                                     <li><span>Country:</span> Uruguay</li>
@@ -65,8 +66,8 @@
                                     <li><span>Language Used:</span> HTML</li>
                                     <li><span>Degree:</span> CS</li>
                                 </ul>
-                            </div>
-                            <div class="skill-bar"> 
+                            </section>
+                            <section class="skill-bar"> 
                                 <ul>
                                     <li><p>HTML</p><div class="bar"><div class="active-bar" style="width:99%"></div></div></li>
                                     <li><p>CSS</p><div class="bar"><div class="active-bar" style="width:80%"></div></div></li>
@@ -75,55 +76,55 @@
                                     <li><p>Django</p><div class="bar"><div class="active-bar" style="width:60%"></div></div></li>
                                     <li><p>Ruby On Rails</p><div class="bar"><div class="active-bar" style="width:45%"></div></div></li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </section>
+                        </section>
+                    </section>
+                </article>
                 <!-- Services Slide -->
-                <div class="swiper-slide Services">
-                    <h1 class="heading">Services</h1>
-                    <div class="services-container">
-                        <div class="service" data-service="webdesign">
-                            <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                            <h2>Web Design</h2>
+                <article class="swiper-slide Services">
+                    <h2 class="heading">Services</h2>
+                    <section class="services-container">
+                        <article class="service" data-service="webdesign">
+                            <section class="service-icon"><i class="fa-solid fa-pen-ruler"></i></section>
+                            <h3 class="service-title">Web Design</h3>
                             <p class="service-short">Expert web design services for businesses of all sizes</p>
-                            <div class="service-details-content">
+                            <section class="service-details-content">
                                 <span class="close-details">×</span>
-                                <h3>What I Offer:</h3>
+                                <h4 class="service-details-title">What I Offer:</h4>
                                 <ul>
                                     <li>Responsive designs that work on all devices</li>
                                     <li>User experience (UX) focused layouts</li>
                                     <li>Modern and clean aesthetics</li>
                                     <li>SEO-friendly structures</li>
                                     <li>Fast loading pages</li>
-                                </ul>
-                                <p>Responsive, user-focused websites that combine aesthetic appeal with functionality, delivering seamless experiences across all devices while supporting your business objectives.</p>
-                            </div>
-                        </div>
-                        <div class="service" data-service="webdev">
-                            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                            <h2>Web Development</h2>
+                                </ul>  
+                                <p class="service-details-text">Responsive, user-focused websites that combine aesthetic appeal with functionality, delivering seamless experiences across all devices while supporting your business objectives.</p>
+                            </section>
+                        </article>
+                        <article class="service" data-service="webdev">
+                            <section class="service-icon"><i class="fa-solid fa-code"></i></section>
+                            <h3 class="service-title">Web Development</h3>
                             <p class="service-short">Custom web solutions with cutting-edge technologies</p>
-                            <div class="service-details-content">
+                            <section class="service-details-content">
                                 <span class="close-details">×</span>
-                                <h3>Technologies I Use:</h3>
+                                <h4 class="service-details-title">Technologies I Use:</h4>
                                 <ul>
                                     <li>HTML5, CSS3, JavaScript (ES6+)</li>
                                     <li>React, Vue.js, Angular</li>
                                     <li>Node.js, Express</li>
                                     <li>PHP, Python, Ruby</li>
                                     <li>MySQL, MongoDB, PostgreSQL</li>
-                                </ul>
-                                <p>Customized web solutions built with cutting-edge technologies that deliver seamless functionality, speed, and security.</p>
-                            </div>
-                        </div>
-                        <div class="service" data-service="graphicdesign">
-                            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
-                            <h2>Graphic Design</h2>
+                                </ul>  
+                                <p class="service-details-text">Customized web solutions built with cutting-edge technologies that deliver seamless functionality, speed, and security.</p>
+                            </section>
+                        </article>
+                        <article class="service" data-service="graphicdesign">
+                            <section class="service-icon"><i class="fa-solid fa-palette"></i></section>
+                            <h3 class="service-title">Graphic Design</h3>
                             <p class="service-short">Eye-catching visual solutions for your brand</p>
-                            <div class="service-details-content">
+                            <section class="service-details-content">
                                 <span class="close-details">×</span>
-                                <h3>Design Services:</h3>
+                                <h4 class="service-details-title">Design Services:</h4>
                                 <ul>
                                     <li>Logo design and branding</li>
                                     <li>Social media graphics</li>
@@ -131,20 +132,20 @@
                                     <li>Digital marketing assets</li>
                                     <li>UI elements for web and mobile apps</li>
                                 </ul>
-                                <p>Eye-catching visual solutions that elevate your brand through impactful logos, marketing materials, and digital assets.</p>
-                            </div>
-                        </div>
-                        <div class="service" data-service="software">
-                            <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                            <h2>Software Development</h2>
+                                <p class="service-details-text">Eye-catching visual solutions that elevate your brand through impactful logos, marketing materials, and digital assets.</p>
+                            </section>
+                        </article>
+                        <article class="service" data-service="software">
+                            <section class="service-icon"><i class="fa-solid fa-laptop-code"></i></section>
+                            <h3 class="service-title">Software Development</h3>
                             <p class="service-short">Custom software solutions to streamline operations</p>
-                            <div class="service-details-content">
+                            <section class="service-details-content">
                                 <span class="close-details">×</span>
-                                <h3>Software Solutions:</h3>
+                                <h4 class="service-details-title">Software Solutions:</h4>
                                 <ul>
                                     <li>Custom desktop applications</li>
                                     <li>Mobile app development</li>
-                                    <li>Process automation tools</li>
+                                    <li>Process automation</li>
                                     <li>API development and integration</li>
                                     <li>Legacy system modernization</li>
                                 </ul>
@@ -162,67 +163,67 @@
                                     <li>Database design and optimization</li>
                                     <li>Performance tuning</li>
                                     <li>Security implementation</li>
-                                    <li>Backup and recovery solutions</li>
+                                    <li>Backup and recovery</li>
                                     <li>Migration and upgrade services</li>
                                 </ul>
                                 <p>Expert database management ensuring optimal performance, security, and reliability.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </article>
+                    </section>
+                </article>
                 <!-- Gallery Slide -->
-                <div class="swiper-slide gallery">
-                    <h1 class="heading">Gallery</h1>
-                    <div class="projects-container">
-                        <div class="project" data-project="project1">
-                            <img src="https://picsum.photos/seed/project1/300/200" alt="Project 1">
-                            <div class="project-overlay">
+                <article class="swiper-slide gallery">
+                    <h2 class="heading">Gallery</h2>
+                    <section class="projects-container">
+                        <article class="project" data-project="project1">
+                            <img src="https://picsum.photos/seed/project1/300/200" alt="E-commerce Website Project">
+                            <section class="project-overlay">
                                 <h3>E-commerce Website</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                        <div class="project" data-project="project2">
-                            <img src="https://picsum.photos/seed/project2/300/200" alt="Project 2">
-                            <div class="project-overlay">
+                            </section>
+                        </article>
+                        <article class="project" data-project="project2">
+                            <img src="https://picsum.photos/seed/project2/300/200" alt="Blog Platform Project">
+                            <section class="project-overlay">
                                 <h3>Blog Platform</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                        <div class="project" data-project="project3">
-                            <img src="https://picsum.photos/seed/project3/300/200" alt="Project 3">
-                            <div class="project-overlay">
+                            </section>
+                        </article>
+                        <article class="project" data-project="project3">
+                            <img src="https://picsum.photos/seed/project3/300/200" alt="Portfolio Site Project">
+                            <section class="project-overlay">
                                 <h3>Portfolio Site</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                        <div class="project" data-project="project4">
-                            <img src="https://picsum.photos/seed/project4/300/200" alt="Project 4">
-                            <div class="project-overlay">
+                            </section>
+                        </article>
+                        <article class="project" data-project="project4">
+                            <img src="https://picsum.photos/seed/project4/300/200" alt="Mobile App Project">
+                            <section class="project-overlay">
                                 <h3>Mobile App</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                        <div class="project" data-project="project5">
-                            <img src="https://picsum.photos/seed/project5/300/200" alt="Project 5">
-                            <div class="project-overlay">
+                            </section>
+                        </article>
+                        <article class="project" data-project="project5">
+                            <img src="https://picsum.photos/seed/project5/300/200" alt="Dashboard UI Project">
+                            <section class="project-overlay">
                                 <h3>Dashboard UI</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                        <div class="project" data-project="project6">
-                            <img src="https://picsum.photos/seed/project6/300/200" alt="Project 6">
-                            <div class="project-overlay">
+                            </section>
+                        </article>
+                        <article class="project" data-project="project6">
+                            <img src="https://picsum.photos/seed/project6/300/200" alt="Social Network Project">
+                            <section class="project-overlay">
                                 <h3>Social Network</h3>
                                 <p>Click to view details</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-details" id="project1" style="display: none;">
-                        <h2>E-commerce Website</h2>
-                        <div class="project-img">
+                            </section>
+                        </article>
+                    </section>
+                    <article class="project-details" id="project1" style="display: none;">
+                        <h3>E-commerce Website</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project1/800/400" alt="E-commerce Website">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Fashion Boutique</p>
                             <p><strong>Technologies:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
                             <p><strong>Duration:</strong> 3 months</p>
@@ -230,12 +231,12 @@
                         <p>A fully functional e-commerce website for a fashion boutique with product catalog, shopping cart, user accounts, and payment integration.</p>
                         <a href="#" class="project-link">Visit Website</a>
                     </div>
-                    <div class="project-details" id="project2" style="display: none;">
-                        <h2>Blog Platform</h2>
-                        <div class="project-img">
+                    <article class="project-details" id="project2" style="display: none;">
+                        <h3>Blog Platform</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project2/800/400" alt="Blog Platform">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Travel Blogger</p>
                             <p><strong>Technologies:</strong> WordPress, Custom Theme, PHP</p>
                             <p><strong>Duration:</strong> 1 month</p>
@@ -243,12 +244,12 @@
                         <p>A customized blog platform with content management system, comment moderation, and social media integration.</p>
                         <a href="#" class="project-link">Visit Website</a>
                     </div>
-                    <div class="project-details" id="project3" style="display: none;">
-                        <h2>Portfolio Site</h2>
-                        <div class="project-img">
+                    <article class="project-details" id="project3" style="display: none;">
+                        <h3>Portfolio Site</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project3/800/400" alt="Portfolio Site">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Photographer</p>
                             <p><strong>Technologies:</strong> HTML, CSS, JavaScript, jQuery</p>
                             <p><strong>Duration:</strong> 2 weeks</p>
@@ -256,12 +257,12 @@
                         <p>A responsive portfolio website for a professional photographer with image galleries and contact form.</p>
                         <a href="#" class="project-link">Visit Website</a>
                     </div>
-                    <div class="project-details" id="project4" style="display: none;">
-                        <h2>Mobile App</h2>
-                        <div class="project-img">
+                    <article class="project-details" id="project4" style="display: none;">
+                        <h3>Mobile App</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project4/800/400" alt="Mobile App">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Fitness Startup</p>
                             <p><strong>Technologies:</strong> React Native, Firebase</p>
                             <p><strong>Duration:</strong> 4 months</p>
@@ -269,12 +270,12 @@
                         <p>A cross-platform mobile application for tracking workouts, setting goals, and connecting with fitness trainers.</p>
                         <a href="#" class="project-link">View on App Store</a>
                     </div>
-                    <div class="project-details" id="project5" style="display: none;">
-                        <h2>Dashboard UI</h2>
-                        <div class="project-img">
+                    <article class="project-details" id="project5" style="display: none;">
+                        <h3>Dashboard UI</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project5/800/400" alt="Dashboard UI">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Analytics Company</p>
                             <p><strong>Technologies:</strong> React, D3.js, Node.js</p>
                             <p><strong>Duration:</strong> 2 months</p>
@@ -282,12 +283,12 @@
                         <p>An interactive data visualization dashboard with real-time updates and customizable widgets.</p>
                         <a href="#" class="project-link">View Demo</a>
                     </div>
-                    <div class="project-details" id="project6" style="display: none;">
-                        <h2>Social Network</h2>
-                        <div class="project-img">
+                    <article class="project-details" id="project6" style="display: none;">
+                        <h3>Social Network</h3>
+                        <section class="project-img">
                             <img src="https://picsum.photos/seed/project6/800/400" alt="Social Network">
-                        </div>
-                        <div class="project-info">
+                        </section>
+                        <section class="project-info">
                             <p><strong>Client:</strong> Community Group</p>
                             <p><strong>Technologies:</strong> PHP, Laravel, MySQL, Vue.js</p>
                             <p><strong>Duration:</strong> 6 months</p>
@@ -295,64 +296,64 @@
                         <p>A community-based social network with user profiles, discussion forums, and event management features.</p>
                         <a href="#" class="project-link">Visit Website</a>
                     </div>
-                </div>
+                </article>
                 <!-- Certificates Slide -->
-                <div class="swiper-slide certificates-slide">
-                    <h1 class="heading">Certificates</h1>
-                    <div class="certificates-container">
-                        <div class="certificate">
-                            <img src="https://www.canva.com/design/DAGjrrnQ0w4/hwI7rCOkln1hKGSqXySbnQ/edit?utm_content=DAGjrrnQ0w4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="Software Developer">
-                        </div>
-                        <div class="certificate">
+                <article class="swiper-slide certificates-slide">
+                    <h2 class="heading">Certificates</h2>
+                    <section class="certificates-container">
+                        <figure class="certificate">
+                            <img src="https://www.canva.com/design/DAGjrrnQ0w4/hwI7rCOkln1hKGSqXySbnQ/edit?utm_content=DAGjrrnQ0w4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="Software Developer Certificate">
+                        </figure>
+                        <figure class="certificate">
                             <img src="https://picsum.photos/seed/cert2/300/400" alt="UI/UX Design Certificate">
-                        </div>
-                        <div class="certificate">
+                        </figure>
+                        <figure class="certificate">
                             <img src="https://picsum.photos/seed/cert3/300/400" alt="Database Management Certificate">
-                        </div>
-                    </div>
-                </div>
+                        </figure>
+                    </section>
+                </article>
                 <!-- Contact Me Slide -->
-                <div class="swiper-slide ContactMe">
-                    <h1 class="heading">Contact Me</h1>
-                    <div class="contact-container">
-                        <div class="contact-info">
-                            <div class="contactinfo">
+                <article class="swiper-slide ContactMe">
+                    <h2 class="heading">Contact Me</h2>
+                    <section class="contact-container">
+                        <section class="contact-info">
+                            <article class="contactinfo">
                                 <i class="fa-solid fa-phone"></i>
                                 <h3>Mobile No</h3>
                                 <p>+598-92-446-184</p>
-                            </div>
-                            <div class="contactinfo">
+                            </article>
+                            <article class="contactinfo">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <h3>Location</h3>
                                 <p>Montevideo, Uruguay</p>
-                            </div>
-                            <div class="contactinfo">
+                            </article>
+                            <article class="contactinfo">
                                 <i class="fa-regular fa-envelope"></i>
                                 <h3>Email</h3>
                                 <p><a href="mailto:Vazquezlucas721@gmail.com">Vazquezlucas721@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <form>
-                            <h2>Send Me A Message 
-                                <div class="sociallinks">
+                            </article>
+                        </section>
+                        <form class="contact-form">
+                            <h2 class="contact-form-title">Send Me A Message 
+                                <section class="sociallinks">
                                     <i class="fa-brands fa-instagram"></i>
                                     <i class="fa-brands fa-facebook"></i>
                                     <i class="fa-brands fa-linkedin"></i>
                                     <i class="fa-brands fa-codepen"></i>
-                                </div>
+                                </section>
                             </h2>
                             <input type="text" placeholder="Name">
                             <input type="email" placeholder="Email">
                             <textarea placeholder="Type Your Message Here..."></textarea>
                             <button class="primary">Send</button>
                         </form>
-                    </div>
+                    </section>
                     <footer>
                         <p>Copyright © 2025 Lucas Vazquez</p>
                     </footer>
-                </div>
-            </div>
-        </div>
+                </article>
+            </section>
+        </section>
     </main>
 </body>
 </html>
